@@ -8,7 +8,6 @@ import Message from './Message'
 class App extends Component {
   // This function strictly needs to be declared before initialising the state
   _toggleMessage = () => {
-    console.log('Test')
     this.setState(prevState => ({
       message:
         prevState.message === messages.message1
