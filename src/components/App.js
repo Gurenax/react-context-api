@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import '../styles/App.css'
 
 import { HelloContext, messages } from '../contexts/hello-context'
+import ButtonContext from '../contexts/button-context';
 import Message from './Message'
 
 class App extends Component {
@@ -25,9 +26,11 @@ class App extends Component {
   render() {
     return (
       <HelloContext.Provider value={ this.state }>
-        <div className="App">
-          <Message />
-        </div>
+        <ButtonContext.Provider value={{ title: 'Toggle Message' }}>
+          <div className="App">
+            <Message />
+          </div>
+        </ButtonContext.Provider>
       </HelloContext.Provider>
     )
   }
