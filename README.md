@@ -100,8 +100,8 @@ export default App
 
 
 ## Updates
-- Button Context - Context that specifies the Title of a Button.
-- Action Context - Context that provides sync and async actions to display the message as an alert.
+- Added Button Context - Context that specifies the Title of a Button.
+- Added Action Context - Context that provides sync and async actions to display the message as an alert.
 
 ---
 
