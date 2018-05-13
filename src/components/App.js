@@ -5,6 +5,7 @@ import '../styles/App.css'
 import { HelloContext, messages } from '../contexts/hello-context'
 import ButtonContext from '../contexts/button-context';
 import Message from './Message'
+import { ActionContext, fireAlertMessage } from '../contexts/action-context';
 
 class App extends Component {
   // This function strictly needs to be declared before initialising the state
@@ -27,9 +28,11 @@ class App extends Component {
     return (
       <HelloContext.Provider value={ this.state }>
         <ButtonContext.Provider value={{ title: 'Toggle Message' }}>
-          <div className="App">
-            <Message />
-          </div>
+          <ActionContext.Provider value={{ alertMessage: fireAlertMessage }}>
+            <div className="App">
+              <Message />
+            </div>
+          </ActionContext.Provider>
         </ButtonContext.Provider>
       </HelloContext.Provider>
     )
