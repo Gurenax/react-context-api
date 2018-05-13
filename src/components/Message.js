@@ -21,12 +21,19 @@ const Message = () => {
                     </button>
                     <ActionContext.Consumer>
                       {
-                        ({alertMessage}) => (
-                          <button onClick={
-                            alertMessage(message.firstWord + ' ' + message.secondWord)
-                          }>
-                            Fire Title as Alert Message
-                          </button>
+                        ({alertMessage, asyncAlertMessage}) => (
+                          <div>
+                            <button onClick={
+                              alertMessage(message.firstWord + ' ' + message.secondWord)
+                            }>
+                              Fire Title as Alert Message
+                            </button>
+                            <button onClick={
+                              asyncAlertMessage(message.firstWord + ' ' + message.secondWord, 3000)
+                            }>
+                              Fire Title as Alert Message after 3 secs
+                            </button>
+                          </div>
                         )
                       }
                     </ActionContext.Consumer>
