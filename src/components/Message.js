@@ -1,6 +1,7 @@
 import React from 'react'
 import { HelloContext } from '../contexts/hello-context';
 import ButtonContext from '../contexts/button-context';
+import { ActionContext } from '../contexts/action-context';
 
 const Message = () => {
   return (
@@ -14,9 +15,22 @@ const Message = () => {
             <ButtonContext.Consumer>
               {
                 ({title}) => (
-                  <button onClick={ toggleMessage }>
-                    { title }
-                  </button>
+                  <div>
+                    <button onClick={ toggleMessage }>
+                      { title }
+                    </button>
+                    <ActionContext.Consumer>
+                      {
+                        ({alertMessage}) => (
+                          <button onClick={
+                            alertMessage(message.firstWord + ' ' + message.secondWord)
+                          }>
+                            Fire Title as Alert Message
+                          </button>
+                        )
+                      }
+                    </ActionContext.Consumer>
+                  </div>
                 )
               }
             </ButtonContext.Consumer>
