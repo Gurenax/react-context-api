@@ -98,6 +98,11 @@ class App extends Component {
 export default App
 ```
 
+
+## Updates
+- Button Context - Context that specifies the Title of a Button.
+- Action Context - Context that provides sync and async actions to display the message as an alert.
+
 ---
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
